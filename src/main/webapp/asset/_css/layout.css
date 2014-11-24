@@ -1,0 +1,48 @@
+@charset "UTF-8";
+/* CSS Document */
+body { margin:0 auto; font-size:12px; font-family:Arial,Helvetica,sans-serif; line-height:1.5;}
+ul,dl,dd,h1,h2,h3,h4,h5,h6,form,p { padding:0; margin:0;}
+ul { list-style:none;}
+img { border:0px;}
+a { color:#05a; text-decoration:none;}
+a:hover { color:#f00;}
+
+.clearfloat {clear:both;height:0;font-size: 1px;line-height: 0px;} 
+
+/*body*/
+#container {
+	width:960px;
+	margin:0 auto;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-color: #CCCCCC;
+	border-bottom-color: #CCCCCC;
+	border-left-color: #CCCCCC;	
+}
+
+/*header*/
+#header { height:70px; padding-left:10px;background: url("http://www.topcj.com/webyqsad/zdxz5/img/index/headerBg.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0);overflow:auto;
+	zoom:1;}
+
+#nav { height:30px; margin-bottom:4px;}
+
+/*main*/
+#maincontent {
+	overflow:auto;
+	zoom:1;
+	margin-bottom:8px;
+	height:100%;
+}
+
+/*footer*/
+#footer {
+	height:70px;
+	line-height: 18px;
+	text-align:center;
+	padding-top:20px;
+	
+}

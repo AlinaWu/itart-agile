@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+<taglib>
+    <tlibversion>1.0</tlibversion>
+    <jspversion>2.0</jspversion>
+    <shortname>mis</shortname>
+    <uri>http://www.piaohai.com</uri>
+    <tag>
+        <name>doc</name>
+        <tagclass>com.piaohai.mis.common.tag.DocumentTag</tagclass>
+        <body-content>empty</body-content>
+        <!--设定属性(如果有的话)  -->
+		<attribute>
+			<!--指定标签名 -->
+			<name>name</name>
+			<!--是否是必须，如果非必须没设置则为空 -->
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue><!--是否可在属性中使用表达式  -->
+		</attribute>
+		 <!--设定属性(如果有的话)  -->
+		<attribute>
+			<!--格式化 -->
+			<name>format</name>
+			<!--是否是必须，如果非必须没设置则为空 -->
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue><!--是否可在属性中使用表达式  -->
+		</attribute>
+	 </tag>
+	 <tag>
+		<name>chan</name>
+        <tagclass>com.piaohai.mis.common.tag.ChannelTag</tagclass>
+         <body-content>JSP</body-content>
+        <!--设定属性(如果有的话)  -->
+		<attribute>
+			<!--指定标签名 -->
+			<name>name</name>
+			<!--是否是必须，如果非必须没设置则为空 -->
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue><!--是否可在属性中使用表达式  -->
+		</attribute>
+		<attribute>
+			<!--制定频道 -->
+			<name>item</name>
+			<!--是否是必须，如果非必须没设置则为空 -->
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue><!--是否可在属性中使用表达式  -->
+		</attribute>
+    </tag>
+</taglib>

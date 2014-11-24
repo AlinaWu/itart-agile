@@ -1,0 +1,87 @@
+@charset "UTF-8";
+/* index��ʽ start */
+.title {
+	font-size: x-large;
+	font-weight: bolder;
+	font-style: normal;
+	padding-top:10px;
+}
+a { color: #666666; text-decoration: none; }
+a:hover { color: #FF5B5B; }
+	/*����*/
+	#games { width:100%; height:400px; margin:0 auto}
+	#main {height:250px;}
+#intro {
+	float: left;
+	width: 340px;
+	margin-left:2px;
+	
+}
+#product {
+	float: right;
+	width: 600px;
+	margin-right:2px;
+}
+#main .indexbar {
+	border-bottom-style: solid;
+	border-bottom-color: #666666;
+	overflow:auto;
+	zoom:1;
+	border-bottom-width: 1px;
+}
+#main .indexbar .indextitle {
+	float: left;
+	color:#666666;
+	font:18px/22px "΢���ź�";
+	margin-left: 10px; 
+	line-height:28px;
+}
+#main .indexbar .indexmore {
+	float: right;
+	color: #666666;
+	font-size: 14px;
+	font-family: simsun;
+	line-height:28px;
+	margin-right:10px;
+}
+/* index��ʽ end */
+#container #header #header_left {
+	float: left;
+	width:400px;
+}
+#container #header #header_right {
+	float: right;
+	padding-top:5px;
+}
+#list_side {
+	float: left;
+	width: 240px;
+	height: 100%;
+	border-right-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: none;
+	border-right-color: #CCCCCC;
+	border-top-width: 1px;
+	border-top-color: #CCCCCC;
+	border-bottom-width: 1px;
+	border-bottom-color: #CCCCCC;
+	padding-top: 10px;
+	padding-left: 10px;
+}
+#list_main {
+	float: right;
+	width: 700px;
+	height: 100%;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #CCCCCC;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #CCCCCC;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #CCCCCC;
+	
+}

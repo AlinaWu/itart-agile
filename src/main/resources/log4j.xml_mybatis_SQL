@@ -1,0 +1,86 @@
+<?xml   version="1.0"  encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC "-//LOGGER" "http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+<appender name="STDOUT" class="org.apache.log4j.ConsoleAppender">
+  <layout class="org.apache.log4j.PatternLayout">
+   <param name="ConversionPattern"
+    value="%d [%t] %p - %m%n" />
+  </layout>
+  <filter class="org.apache.log4j.varia.LevelRangeFilter">
+   <param name="LevelMin" value="INFO" />
+   <param name="LevelMax" value="FATAL" />
+  </filter>
+ </appender>
+<appender name="Access" class="org.apache.log4j.RollingFileAppender">
+  <param name="File" value="./log/access.log" />
+  <param name="Append" value="false" />
+  <param name="MaxFileSize" value="1024" />
+  <param name="MaxBackupIndex" value="2" />
+  <param name="Threshold" value="INFO" />
+  <layout class="org.apache.log4j.PatternLayout">
+   <param name="ConversionPattern"
+    value="%d [%t] %p - %m%n" />
+  </layout>
+  <filter class="org.apache.log4j.varia.LevelRangeFilter">
+   <param name="LevelMin" value="INFO" />
+   <param name="LevelMax" value="WARN" />
+   <param name="AcceptOnMatch" value="true" />
+  </filter>
+ </appender>
+
+
+ <appender name="Error" class="org.apache.log4j.RollingFileAppender">
+  <param name="Append" value="false" />
+  <param name="File" value="./log/error.log" />
+  <param name="MaxFileSize" value="1024" />
+  <param name="MaxBackupIndex" value="2" />
+  <layout class="org.apache.log4j.PatternLayout">
+   <param name="ConversionPattern"
+    value="%d [%t] %p - %m%n" />
+  </layout>
+  <filter class="org.apache.log4j.varia.LevelRangeFilter">
+   <param name="LevelMin" value="ERROR" />
+   <param name="LevelMax" value="ERROR" />
+   <param name="AcceptOnMatch" value="true" />
+  </filter>
+ </appender>
+<appender name="IBatis" class="org.apache.log4j.ConsoleAppender">
+  <layout class="org.apache.log4j.PatternLayout">
+   <param name="ConversionPattern"
+    value="%-4r [%t] %-5p %c %x - %m%n" />
+  </layout>
+  <filter class="org.apache.log4j.varia.LevelRangeFilter">
+   <param name="LevelMin" value="DEBUG" />
+   <param name="LevelMax" value="DEBUG" />
+  </filter>
+ </appender> 
+
+<logger name="com.ibatis" additivity="true">
+  <level value="DEBUG" />
+ </logger>
+ 
+ <logger name="java.sql.Connection" additivity="true">
+  <level value="DEBUG" />
+ </logger>
+ 
+ <logger name="java.sql.Statement" additivity="true">
+  <level value="DEBUG" />
+ </logger>
+ 
+ <logger name="java.sql.PreparedStatement" additivity="true">
+  <level value="DEBUG" />
+  <appender-ref ref="IBatis" />
+ </logger>
+ 
+ <logger name="java.sql.ResultSet" additivity="true">
+  <level value="DEBUG" />
+  <appender-ref ref="IBatis" />
+ </logger> 
+
+ <root>
+  <appender-ref ref="STDOUT" />
+  <appender-ref ref="Access" />
+  <appender-ref ref="Error" />
+  <appender-ref ref="IBatis" />
+ </root>
+</log4j:configuration>
