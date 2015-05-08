@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.convention.default.parent.package" value="itart-default" /> 
+    
+	<bean type="org.apache.struts2.convention.ActionConfigBuilder" name="ActionConfigBuilderExtend" class="top.itart.agile.common.extend.PackageBasedActionConfigBuilderExtend"/>
+	<constant name="struts.convention.actionConfigBuilder" value="ActionConfigBuilderExtend"/>
+	
+	<!-- Directory where templates are located  -->
+	<constant name="struts.convention.result.path" value="/content" />
+	
+	<!-- If set, only packages that start with its value will be scanned for actions   -->
+	<constant name="struts.convention.package.locators.basePackage" value="top.itart.agile" />
+	
+	<!-- Packages whose name end with one of these strings will be scanned for actions   -->
+	<constant name="struts.convention.package.locators" value="action" />
+	
+	<package name="itart-default" extends="convention-default,json-default">
+		<interceptors>
+			<!-- 登录验证拦截器 -->
+			<interceptor name="authority" class="top.itart.agile.common.interceptor.AuthorityInterceptor" />
+			<interceptor-stack name="basicStack">
+				<!-- 将登录验证拦截器加入默认的拦截器栈中 -->
+				<interceptor-ref name="authority">
+					<param name="excludeMethods">welcome,login</param>
+				</interceptor-ref>
+				<interceptor-ref name="paramsPrepareParamsStack" />
+				<interceptor-ref name="defaultStack">
+					<!-- 控制log4j是否打印错误信息 -->
+					<param name="exception.logEnabled">true</param>
+					<param name="exception.logLevel">error</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="basicStack" />
+	
+		<global-results>
+		    <result name="EXCEL" type="stream">
+		           <param name="contentType">application/vnd.ms-excel</param>
+		           <param name="inputName">inputExcel</param>
+		           <param name="contentDisposition">attachment;filename="${filename}"</param>
+		           <param name="bufferSize">8192</param>
+		       </result>
+		</global-results>
+	</package>
+</struts>
